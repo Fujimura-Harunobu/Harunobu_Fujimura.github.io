@@ -121,18 +121,6 @@ body{
   background: var(--accent);
 }
 
-/* 見出し左の縦棒をアニメーションできるように */
-.section h2::before{
-  transition: height 0.15s ease, top 0.15s ease;
-}
-
-/* マウスをセクションに乗せたら縦棒を少し伸ばす */
-.section:hover h2::before{
-  height: 1.6em;
-  top: 0.2em;
-}
-
-
 /* =========================
    Chips (Category tabs)
 ========================= */
@@ -831,7 +819,21 @@ a:focus-visible{
   }
 }
 
+/* 見出し左の縦棒：ホバーで伸びる */
+.section h2::before{
+  transition: height 0.18s ease, transform 0.18s ease;
+  transform-origin: top;
+}
 
+/* セクションにマウスが乗ったら伸ばす（子要素上でも発火） */
+.section:hover h2::before{
+  height: 1.6em;          /* ここを好みで調整 */
+}
+
+/* 見出しそのものに乗っても確実に発火させる保険 */
+.section h2:hover::before{
+  height: 1.6em;
+}
 
 
 
