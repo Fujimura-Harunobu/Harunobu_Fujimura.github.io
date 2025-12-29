@@ -17,12 +17,14 @@
       </button>
 
       <nav class="site-nav" id="siteNav">
-        <a href="#top">TOP</a>
         <a href="#profile">PROFILE</a>
+        <a href="#cv">CV</a>
         <a href="#research">RESEARCH</a>
         <a href="#publications">PUBLICATIONS</a>
         <a href="#news">PRESENTATIONS</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#awards">AWARDS</a>
+        <a href="#teaching">TA/TF</a>
+        <a href="#othermaterials">OTHERS</a>
         <a href="#en">English</a>
       </nav>
     </div>
@@ -30,10 +32,13 @@
 
   <main id="top" class="main">
     <section class="hero container">
-      <p class="kicker">YOUR FIELD / KEYWORDS</p>
-      <h1>Welcome to My Homepage!</h1>
+      <div class="hero-badge">
+      <h1 class="welcome">藤村晴伸のホームページ</h1><br> 
+      <!-- <p class="kicker">理論物理 / 量子もつれ</p> -->
+      </div>
       <p class="lead">
-        ここにサイトの説明を1〜2文で書きます。研究・制作物・活動内容など。
+        このサイトでは私の研究内容や経歴、論文・発表リストなどの情報をまとめています。<br>
+        This site is a personal homepage for reserach and activities
       </p>
 
       <!-- <div class="button-row">
@@ -45,40 +50,125 @@
     <section class="section container" id="profile">
       <h2>PROFILE</h2>
 
-      <div class="card">
-        <h3>PROFILE SNAPSHOT</h3>
-        <dl class="dl-grid">
-          <dt>Name</dt><dd> 藤村 晴伸（Harunobu Fujimura）</dd>
-          <dt>Affiliation</dt><dd>所属</dd>
-          <dt>Field</dt><dd>分野</dd>
-        </dl>
-      </div>
-
-      <div class="split">
-        <div>
-          <h3>自己紹介 / Brief Bio</h3>
-          <p>簡単な自己紹介を数行。</p>
-
-          <h3>略歴</h3>
-          <ul>
-            <li>2025- 〇〇</li>
-            <li>2024 〇〇</li>
-          </ul>
+      <div class="profile-card">
+        <!-- 左：写真 -->
+        <div class="profile-photo">
+          <img src="materials/Dr.wani.PNG" alt="Harunobu Fujimura" loading="lazy">
         </div>
 
-        <figure class="avatar">
-          <!-- 画像を置くなら images/profile.jpg を作って差し替え -->
-          <div class="avatar-box">Photo</div>
-          <figcaption>（任意）</figcaption>
-        </figure>
+        <!-- 右：プロフィール -->
+        <div class="profile-body">
+          <div class="profile-name">藤村 晴伸（ふじむら　はるのぶ）</div>
+          <div class="profile-affil muted">素粒子理論研究室(西岡グループ) / 理論物理</div>
+
+          <p class="profile-text">
+            理論物理・量子情報の観点から、量子多体系や場の量子論における量子もつれや非平衡ダイナミクスを研究しています。
+          </p>
+
+          <ul class="profile-meta">
+            <li><span class="label">Email</span> 
+              <a href="mailto:fujimuraharunobu@gmail.com">fujimuraharunobu@gmail.com</a>, 
+              <a href="mailto:fujimura@het.phys.sci.osaka-u.ac.jp">fujimura@het.phys.sci.osaka-u.ac.jp</a>
+            </li>
+            <li><span class="label">Affiliation</span> 大阪大学 大学院 理学研究科 物理学専攻</li>
+            <li><span class="label">Interests</span> 量子もつれ、場の量子論、非平衡現象、量子コンピューティング</li>
+            <li><span class="label">Pastime</span> ランニング、バドミントン、友達とダベること、ポケモンなど</li>
+          </ul>
+
+        </div>
       </div>
     </section>
 
-    <section class="section container" id="research">
-      <h2>RESEARCH</h2>
-      <h3>研究テーマ / Research Topics</h3>
-      <p>研究テーマの説明。</p>
+
+
+    <section class="section container" id="cv">
+      <h2>CV</h2>
+
+      <ul class="cv-list">
+        <li>
+          <span class="cv-term">2025–</span>
+          <div class="cv-content">
+            <div class="cv-title">
+              ○○大学 大学院 理学研究科
+            </div>
+            <div class="muted">
+              博士後期課程
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="cv-term">2023–2025</span>
+          <div class="cv-content">
+            <div class="cv-title">
+              ○○大学 大学院 理学研究科
+            </div>
+            <div class="muted">
+              博士前期課程
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="cv-term">2019–2023</span>
+          <div class="cv-content">
+            <div class="cv-title">
+              ○○大学 理学部
+            </div>
+            <div class="muted">
+              物理学科
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
+
+
+    <section class="section container" id="research">
+      <h2>研究内容 / RESEARCH</h2>
+      <div> 私の研究テーマは大きく分けて三つあります。</div><br>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-title">
+            量子もつれ
+          </div>
+          <p class="research-text">
+            量子もつれ(エンタングルメント)の理論研究を行っています。主な対象は量子多体系や量子力学を拡張した枠組みである場の量子論です。
+          </p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-title">
+            非平衡系の量子ダイナミクス
+          </div>
+          <p class="research-text">
+            非平衡系や開放系では直感に反する新奇現象が起こることがあります。私は理論物理と量子情報理論を用いて量子ダイナミクスの理論研究を行っています。
+          </p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-title">
+            量子コンピューティングの応用
+          </div>
+          <p class="research-text">
+            量子コンピューティングを量子多体系・場の量子論に応用する研究を行っています。古典計算では困難な課題を解決し、新たな知見を得ることを目指しています。
+          </p>
+        </div>
+      </div><br>
+      <div class="materials">
+        スライドによる説明は
+          <a href="https://example.com/slides.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="material-link">
+            ▶ 研究紹介スライド（PDF）
+          </a>
+        を参照ください。
+          </div>
+      </div><br>
+
+    </section>
+
 
     <section class="section container" id="publications">
       <h2>PUBLICATIONS</h2>
@@ -269,9 +359,89 @@
       </ul>
     </section>
 
+    <section class="section container" id="awards">
+      <h2>AWARDS</h2>
 
-    <section class="section container" id="contact">
-      <h2>CONTACT</h2>
+      <ul class="timeline">
+        <li>
+          <div class="date">
+            <span>2025.03</span>
+            <span class="award-no"></span>
+          </div>
+
+          <div class="content">
+            <div class="title">
+              ○○学会 若手奨励賞
+            </div>
+            <div class="muted">
+              授与機関：○○学会
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="date">
+            <span>2023.09</span>
+            <span class="award-no"></span>
+          </div>
+
+          <div class="content">
+            <div class="title">
+              Best Poster Award
+            </div>
+            <div class="muted">
+              ○○国際会議
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section container" id="teaching">
+      <h2>TEACHING EXPERIENCE</h2>
+
+      <ul class="teaching-list">
+        <li>
+          <span class="term">2024–2025</span>
+          <div class="teach-content">
+            <div class="teach-title">
+              ○○大学 理学部
+            </div>
+            <div class="muted">
+              量子力学I（TA）
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="term">2022–2024</span>
+          <div class="teach-content">
+            <div class="teach-title">
+              ○○大学 大学院
+            </div>
+            <div class="muted">
+              数理物理学特論（TA）
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+
+    <section class="section container" id="othermaterials">
+      <h2>その他 / Others</h2>
+      <div>
+          <h3>研究会運営 / Brief Bio</h3>
+          <p>2024.10.## 関西地域セミナー</p>
+          
+      </div>
+
+      <div>
+          <h3>Links</h3>
+          <p>ああああ</p>
+          
+      </div>
       <p>連絡方法を書きます。</p>
       <ul>
         <li>Email: yourname [at] example.com</li>
@@ -282,12 +452,31 @@
       <h2>EN</h2>
       <p>英語ページを分けたい場合は、別のHTML（en.html）を作るのが一般的です。</p>
     </section>
+
+    <section class="section container thanks">
+      <div class="thanks-wrap">
+        <div class="speech-bubble">
+          最後まで読んでくれてありがとう！
+        </div>
+
+        <!-- キャラ画像（高さ基準） -->
+        <img src="materials/Dr.wani.PNG" alt="マスコットキャラ" class="mascot">
+
+      </div>
+
+      <!-- 説明文は外に出す -->
+      <div class="mascot-caption">
+        大阪大学マスコットキャラ：ワニ博士
+      </div>
+    </section>
+
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <small>© Your Name</small>
-      <small class="muted">Last update: 2025-12-28</small>
+      <small>Harunobu Fujimura</small>
+      <small class="muted">Last update: 2025-12-29</small>
     </div>
   </footer>
 

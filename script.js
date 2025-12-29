@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   sortPublicationsByDateDesc();     // ← ソート
   renumberPublications();           // ← その後に番号
   setupFilter("#publications", "#pubList", renumberPublications);
+
+  /* AWARDS */
+  renumberAwards();   // ← これを追加
 });
 
 
@@ -145,6 +148,17 @@ function renumberPublications() {
   items.forEach((li, index) => {
     const no = li.querySelector(".pub-no");
     if (no) no.textContent = `No.${index + 1}`;
+  });
+}
+
+function renumberAwards() {
+  const items = Array.from(document.querySelectorAll("#awards .timeline li"));
+
+  items.forEach((li, index) => {
+    const no = li.querySelector(".award-no");
+    if (no) {
+      no.textContent = `No.${index + 1}`;
+    }
   });
 }
 

@@ -372,5 +372,456 @@ body{
 }
 
 
+/* トップメッセージ */
+.welcome{
+  color: var(--accent); /* 紺色 */
+}
+
+/* ===== HERO：kicker + welcome だけ淡色背景・中央揃え ===== */
+.hero{
+  text-align: center;
+  padding: 32px 0 24px;   /* 余白を引き締める */
+}
+
+/* kicker + welcome をまとめて見せる */
+.hero .kicker,
+.hero .welcome{
+  display: inline-block;
+  background: var(--accent-weak); /* 淡い青 */
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+/* kicker */
+.hero .kicker{
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* welcome（タイトル） */
+.hero .welcome{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--accent);
+}
+
+/* タイトルと本文の間隔 */
+.hero .welcome + .lead{
+  margin-top: 14px;
+}
+
+/* lead 文 */
+.hero .lead{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* モバイル調整 */
+@media (max-width: 720px){
+  .hero{
+    padding: 24px 0 18px;
+  }
+  .hero .kicker,
+  .hero .welcome{
+    padding: 6px 14px;
+  }
+}
+
+/* ===== HERO：welcome + kicker を1つの塊に ===== */
+.hero{
+  text-align: center;
+  padding: 28px 0 22px; /* 余白控えめ */
+}
+
+/* 1つの塊 */
+.hero-badge{
+  display: inline-block;
+  background: var(--accent-weak); /* 淡い青 */
+  padding: 14px 24px 18px;
+  border-radius: 22px;
+}
+
+/* kicker */
+.hero-badge .kicker{
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* welcome */
+.hero-badge .welcome{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--accent);
+}
+
+/* lead 文 */
+.hero .lead{
+  margin: 14px auto 0;
+  max-width: 72ch;
+  color: var(--muted);
+  font-size: 16px;
+  text-align: center;
+}
+
+
+/* モバイル調整 */
+@media (max-width: 720px){
+  .hero{
+    padding: 22px 0 18px;
+  }
+  .hero-badge{
+    padding: 12px 18px 14px;
+    border-radius: 18px;
+  }
+}
+
+/* ===== Teaching Experience ===== */
+.teaching-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.teaching-list li{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.term{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.teach-title{
+  font-weight: 500;
+}
+
+/* ===== 通し番号（共通） ===== */
+.award-no{
+  font-weight: 600;
+  color: var(--muted);
+}
+
+
+/* ===== CV / Biography ===== */
+.cv-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.cv-list li{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.cv-term{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cv-title{
+  font-weight: 500;
+}
+
+/* ===== Research ===== */
+.research-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* カード */
+.research-card{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 18px 18px;
+  background: #fff;
+}
+
+/* タイトル（淡い青背景） */
+.research-title{
+  display: inline-block;
+  background: var(--accent-weak);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+
+/* 説明文 */
+.research-text{
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40ch;
+}
+
+/* レスポンシブ */
+@media (max-width: 900px){
+  .research-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-card{
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.research-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31,72,128,0.12);
+}
+
+#research a{
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+#research a:hover{
+  text-decoration-thickness: 2px;
+}
+
+/* ===== 全ハイパーリンク共通：フォーカス枠を紺色に ===== */
+a:focus,
+a:focus-visible{
+  outline: 2px solid var(--accent); /* 紺色 */
+  outline-offset: 2px;
+}
+
+/* a:hover{
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible{
+  outline-offset: 3px;
+} */
+
+
+/* ===== PROFILE（写真 + テキストの窓） ===== */
+.profile-card{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  padding: 20px;                 /* 少し広げる */
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;                     /* ← 間隔を広げる */
+  align-items: start;
+}
+
+
+/* 写真 */
+.profile-photo{
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(31,72,128,0.08);
+  background: none;              /* ← 淡い青を消す */
+}
+
+
+.profile-photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 右側 */
+.profile-name{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.profile-text{
+  margin: 12px 0 12px;
+  color: var(--muted);
+}
+
+/* メタ情報 */
+.profile-meta{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.profile-meta .label{
+  display: inline-block;
+  min-width: 92px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* リンク群 */
+.profile-links{
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-body{
+  position: relative;
+  padding-left: 20px;            /* 縦線との距離 */
+}
+
+/* 縦線 */
+.profile-body::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--line);       /* ごく薄い線 */
+}
+
+/* スマホ：縦並び */
+@media (max-width: 720px){
+  .profile-card{
+    grid-template-columns: 1fr;
+  }
+  .profile-photo{
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+
+/* プロフィール内のメールリンクを紺色に */
+.profile-meta a{
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ホバー時 */
+.profile-meta a:hover{
+  text-decoration: underline;
+}
+
+
+/* ===== Thanks ===== */
+.thanks{
+  text-align: center;
+}
+
+.thanks-wrap{
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ワニ博士 */
+.mascot{
+  width: 96px;
+  height: auto;
+}
+
+/* 吹き出し */
+.speech-bubble{
+  background: var(--accent-weak);
+  color: var(--text);
+  padding: 14px 18px;
+  border-radius: 16px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 吹き出しの尻尾（右側・マスコット向き） */
+.speech-bubble::after{
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--accent-weak);
+}
+
+/* マスコット全体 */
+.mascot-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* キャラ画像 */
+.mascot{
+  width: 96px;
+  height: auto;
+}
+
+/* キャラ説明文 */
+.mascot-caption{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 横並び（基準は画像） */
+.thanks-wrap{
+  display: inline-flex;
+  align-items: center;   /* ← 画像と吹き出しの中央が揃う */
+  gap: 16px;
+}
+
+/* キャラ */
+.mascot{
+  width: 96px;
+  height: auto;
+}
+
+/* 説明文（下に配置） */
+.mascot-caption{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+
+/* スマホ対応 */
+@media (max-width: 600px){
+  .thanks-wrap{
+    flex-direction: column;
+  }
+
+  .speech-bubble::after{
+    display: none;
+  }
+}
+
+
+
+
+
 
 
