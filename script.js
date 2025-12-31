@@ -1,17 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-  /* PRESENTATIONS */
-  sortNewsByDateDesc();
-  renumberNews();
-  setupFilter("#news", "#newsList", renumberNews);
+// リロード時は常にページ先頭へ（#hash を消す）
+window.addEventListener("load", () => {
+  const nav = performance.getEntriesByType?.("navigation")?.[0];
+  const isReload =
+    (nav && nav.type === "reload") ||
+    (performance.navigation && performance.navigation.type === 1); // 古いSafari対策
 
-  /* PUBLICATIONS */
-  sortPublicationsByDateDesc();     // ← ソート
-  renumberPublications();           // ← その後に番号
-  setupFilter("#publications", "#pubList", renumberPublications);
-
-  /* AWARDS */
-  renumberAwards();   // ← これを追加
+  if (isReload) {
+    history.replaceState(null, "", location.pathname + location.search); // #xxx を消す
+    window.scrollTo(0, 0);
+  }
 });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   /* PRESENTATIONS */
+//   sortNewsByDateDesc();
+//   renumberNews();
+//   setupFilter("#news", "#newsList", renumberNews);
+
+//   /* PUBLICATIONS */
+//   sortPublicationsByDateDesc();     // ← ソート
+//   renumberPublications();           // ← その後に番号
+//   setupFilter("#publications", "#pubList", renumberPublications);
+
+//   /* AWARDS */
+//   renumberAwards();   // ← これを追加
+// });
 
 
 /*************************************************
