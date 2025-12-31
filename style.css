@@ -574,7 +574,7 @@ body{
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  max-width: 40ch;
+  max-width: 80ch;
   color: var(--muted);
 }
 
@@ -843,8 +843,37 @@ a:focus-visible{
 
 /* ===== RESEARCH セクション ===== */
 
+/* ナビジャンプ時のずれ補正（固定ヘッダー分） */
+section{
+  scroll-margin-top: 100px;
+}
+
+/* トップに戻るときのずれ補正 */
+#top{
+  scroll-margin-top: 100px;
+}
 
 
+/* Presentation / Publication 内リンク：ホバー時も紺色に固定
+#news a:hover,
+#publications a:hover,
+#awards a:hover,
+#othermaterials a:hover{
+  color: var(--accent);
+} */
 
+/* ===== セクション内リンク：hoverしても紺色 ===== */
+#news a:hover,
+#news a:focus-visible,
+#publications a:hover,
+#publications a:focus-visible,
+#awards a:hover,
+#awards a:focus-visible,
+#othermaterials a:hover,
+#othermaterials a:focus-visible,
+#cv a:hover,
+#cv a:focus-visible{
+  color: var(--accent);
+}
 
 
