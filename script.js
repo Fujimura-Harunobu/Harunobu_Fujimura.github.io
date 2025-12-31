@@ -191,3 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renumberPublications();
   setupFilter("#publications", "#pubList", renumberPublications);
 });
+
+// index.html のみ
+if (navigator.language.startsWith("en")) {
+  location.href = "index-en.html";
+}
+
+
