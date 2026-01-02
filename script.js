@@ -176,6 +176,47 @@ function renumberAwards() {
   });
 }
 
+/*************************************************
+ * 7. AWARDS: 通し番号（表示中のみ）
+ *************************************************/
+function sortAwardsByDateDesc() {
+  const list = document.querySelector("#awards .timeline");
+  if (!list) return;
+
+  const items = Array.from(list.querySelectorAll("li"));
+
+  // 例: "2025.11" / "2022.3" を Date に変換する
+  const toTime = (li) => {
+    // award-no の "No.xx" が混ざらないように、date内の最初の span を読む
+    const raw = li.querySelector(".date span")?.textContent.trim() || "";
+
+    // 数値日付でないものは NaN にして最後へ
+    // 許容: "YYYY.M" または "YYYY.MM"
+    if (!/^\d{4}\.\d{1,2}$/.test(raw)) return NaN;
+
+    // "2025.11" -> "2025-11-01"
+    const iso = raw.replace(".", "-") + "-01";
+    const t = new Date(iso).getTime();
+    return Number.isFinite(t) ? t : NaN;
+  };
+
+  items.sort((a, b) => {
+    const ta = toTime(a);
+    const tb = toTime(b);
+
+    // 日付が取れないもの（NaN）は下へ
+    if (!Number.isFinite(ta) && !Number.isFinite(tb)) return 0;
+    if (!Number.isFinite(ta)) return 1;
+    if (!Number.isFinite(tb)) return -1;
+
+    // 降順
+    return tb - ta;
+  });
+
+  items.forEach((item) => list.appendChild(item));
+}
+
+
 
 /*************************************************
  * 7. 初期化（DOMContentLoaded は1回だけ）
@@ -190,6 +231,10 @@ document.addEventListener("DOMContentLoaded", () => {
   sortPublicationsByDateDesc();
   renumberPublications();
   setupFilter("#publications", "#pubList", renumberPublications);
+
+  /* AWARDS */
+  sortAwardsByDateDesc();
+  renumberAwards();
 });
 
 // index.html のみ
